@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Next-Breath Admin</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Firebase SDKs -->
+  <script type="module" src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js"></script>
+  <script type="module" src="https://www.gstatic.com/firebasejs/10.7.0/firebase-auth.js"></script>
+  <script type="module" src="https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Next-Breath Admin Panel</h1>
+    <p>Approve success stories and update counter</p>
+  </header>
+
+  <section id="loginSection">
+    <h2>Admin Login</h2>
+    <input type="email" id="email" placeholder="Email">
+    <input type="password" id="password" placeholder="Password">
+    <button id="loginBtn">Log In</button>
+    <p id="loginMsg"></p>
+  </section>
+
+  <section id="adminSection" style="display:none;">
+    <h2>Pending Stories</h2>
+    <div id="pendingStories"></div>
+    <h2>Approved Counter</h2>
+    <p>People helped: <span id="counter">0</span></p>
+  </section>
+
+  <script type="module" src="admin.js"></script>
+</body>
+</html>
