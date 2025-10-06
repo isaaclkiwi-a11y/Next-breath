@@ -8,6 +8,40 @@
   <!-- Firebase SDKs -->
   <script type="module" src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js"></script>
   <script type="module" src="https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js"></script>
+  <style>
+    /* Make counter big and centered */
+    #counterSection {
+      text-align: center;
+      margin: 40px 0;
+      padding: 20px;
+      background-color: #f0f8ff;
+      border-radius: 12px;
+    }
+    #counter {
+      font-size: 4rem;
+      font-weight: bold;
+      color: #1a73e8;
+      margin: 10px 0;
+    }
+    .cta {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+    .cta .btn {
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      background-color: #1a73e8;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .cta .btn:hover {
+      background-color: #155bb5;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -17,25 +51,25 @@
   </header>
 
   <main>
-    <!-- Original sections of your homepage -->
+    <!-- Original homepage content -->
     <section class="intro">
       <h2>Helping People Quit Vaping & Other Addictions</h2>
       <p>We provide support, guidance, and a community for anyone trying to make a change. Your next breath matters.</p>
     </section>
 
-    <!-- NEW Counter Section -->
-    <section id="counterSection" class="highlight">
+    <!-- NEW: Big Counter -->
+    <section id="counterSection">
       <h2>People Helped:</h2>
-      <p id="counter" class="bigCounter">0</p>
+      <p id="counter">0</p>
     </section>
 
-    <!-- NEW Buttons for stories and submitting -->
+    <!-- NEW: CTA Buttons -->
     <section class="cta">
-      <button onclick="window.location.href='stories.html'" class="btn">View Success Stories</button>
+      <button onclick="window.location.href='stories.html'" class="btn">View Stories</button>
       <button onclick="window.location.href='submit.html'" class="btn">Share Your Story</button>
     </section>
 
-    <!-- Keep all your other original sections below if any -->
+    <!-- Keep any other original sections here -->
   </main>
 
   <footer>
