@@ -15,10 +15,13 @@ header {
 }
 
 header img.logo {
-    max-width: 250px; /* logo size */
+    max-width: 250px;   /* logo size */
     height: auto;
     display: block;
     margin: 0 auto 10px auto;
+    border-radius: 50%;  /* makes logo round */
+    border: 4px solid white; /* optional border for pop */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* subtle shadow */
 }
 
 header h1 {
@@ -31,69 +34,4 @@ header h1 {
 header p {
     font-family: 'Open Sans', sans-serif;
     font-size: 1.2em;
-    color: white;
-    margin: 0;
-}
-
-/* Navigation */
-nav {
-    background-color: #0077cc;
-    padding: 10px 20px;
-    text-align: center;
-}
-
-nav a {
-    color: white;
-    margin: 0 15px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* Sections */
-section {
-    padding: 40px 20px;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-h2 {
-    color: #00aaff;
-}
-
-/* Call to Action */
-.cta {
-    background-color: #00aaff;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    margin-top: 40px;
-    font-size: 1.3em;
-}
-
-.cta a {
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #0077cc;
-    color: white;
-}
-
-/* Responsive for phones and tablets */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 2em;
-    }
-    header img.logo {
-        max-width: 180px;
-    }
-    nav a {
-        display: block;
-        margin: 10px 0;
-    }
-}
+    color: wh
