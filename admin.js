@@ -1,23 +1,23 @@
+// Firebase config (replace with yours if needed)
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js";
 import { getAuth, signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-auth.js";
 import { getFirestore, collection, query, where, getDocs, doc, updateDoc } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js";
 
-// 🔑 Your Firebase config
 const firebaseConfig = {
-  apiKey: "YOUR-KEY",
-  authDomain: "YOUR-PROJECT.firebaseapp.com",
-  projectId: "YOUR-PROJECT",
-  storageBucket: "YOUR-PROJECT.appspot.com",
-  messagingSenderId: "YOUR-ID",
-  appId: "YOUR-APP-ID"
+  apiKey: "AIzaSyCHaXMRVStvpe7MSzvERSEgHqE3uh4-bXA",
+  authDomain: "next-breath.firebaseapp.com",
+  projectId: "next-breath",
+  storageBucket: "next-breath.firebasestorage.app",
+  messagingSenderId: "127722391309",
+  appId: "1:127722391309:web:bae11e6a46bfbf464c9244",
+  measurementId: "G-9JY5P9Z6ER"
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-// Login
+// Login button
 document.getElementById("loginBtn").addEventListener("click", async () => {
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
