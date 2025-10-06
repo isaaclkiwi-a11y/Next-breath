@@ -1,105 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Next-Breath</title>
-  <link rel="stylesheet" href="style.css">
-  <!-- Firebase SDKs -->
-  <script type="module" src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js"></script>
-  <script type="module" src="https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js"></script>
-  <style>
-    /* Make counter big and centered */
-    #counterSection {
-      text-align: center;
-      margin: 40px 0;
-      padding: 20px;
-      background-color: #f0f8ff;
-      border-radius: 12px;
-    }
-    #counter {
-      font-size: 4rem;
-      font-weight: bold;
-      color: #1a73e8;
-      margin: 10px 0;
-    }
-    .cta {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin-bottom: 40px;
-    }
-    .cta .btn {
-      padding: 15px 30px;
-      font-size: 1.2rem;
-      background-color: #1a73e8;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-    .cta .btn:hover {
-      background-color: #155bb5;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next-Breath | Home</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Counter styles */
+        #counterSection {
+            text-align: center;
+            margin: 40px 0;
+            padding: 20px;
+            background-color: #f0f8ff;
+            border-radius: 12px;
+        }
+        #counter {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #1a73e8;
+            margin: 10px 0;
+        }
+        /* Nav button for stories page */
+        nav a.story-link {
+            background-color: #1a73e8;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        nav a.story-link:hover {
+            background-color: #155bb5;
+        }
+        /* Footer small text */
+        footer small {
+            display: block;
+            margin-top: 10px;
+            font-size: 0.8rem;
+            color: #555;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <img src="logo.png" alt="Next-Breath Logo" class="logo">
+
+<header>
+    <img src="images/logo.png" alt="Next-Breath Logo" class="logo">
     <h1>Next-Breath</h1>
-    <p class="slogan">Breathe Clean. Live Clear.</p>
-  </header>
+    <p>Breathe clean. Live clear.</p>
+</header>
 
-  <main>
-    <!-- Original homepage content -->
-    <section class="intro">
-      <h2>Helping People Quit Vaping & Other Addictions</h2>
-      <p>We provide support, guidance, and a community for anyone trying to make a change. Your next breath matters.</p>
-    </section>
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="mission.html">Mission</a>
+    <a href="join.html">Join</a>
+    <a href="resources.html">Resources</a>
+    <a href="stories.html" class="story-link">Stories</a>
+</nav>
 
-    <!-- NEW: Big Counter -->
-    <section id="counterSection">
-      <h2>People Helped:</h2>
-      <p id="counter">0</p>
-    </section>
+<section>
+    <h2>Welcome!</h2>
+    <p>Next-Breath is here to help teens live clean and breathe clear. Click the links above to learn more or join the movement.</p>
+</section>
 
-    <!-- NEW: CTA Buttons -->
-    <section class="cta">
-      <button onclick="window.location.href='stories.html'" class="btn">View Stories</button>
-      <button onclick="window.location.href='submit.html'" class="btn">Share Your Story</button>
-    </section>
+<!-- Centered Counter Section -->
+<section id="counterSection">
+    <h2>People Helped:</h2>
+    <p id="counter">0</p>
+</section>
 
-    <!-- Keep any other original sections here -->
-  </main>
+<footer>
+    <p>© 2025 Next-Breath | Built for teens, by teens</p>
+    <small>Founder: Isaac Lane | <a href="admin.html">Admin Sign-In</a></small>
+</footer>
 
-  <footer>
-    <p><a href="admin.html">Admin Sign-In</a></p>
-  </footer>
-
-  <script type="module">
+<!-- Firebase Counter Script -->
+<script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js";
     import { getFirestore, collection, query, where, getDocs } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js";
 
     const firebaseConfig = {
-      apiKey: "AIzaSyCHaXMRVStvpe7MSzvERSEgHqE3uh4-bXA",
-      authDomain: "next-breath.firebaseapp.com",
-      projectId: "next-breath",
-      storageBucket: "next-breath.firebasestorage.app",
-      messagingSenderId: "127722391309",
-      appId: "1:127722391309:web:bae11e6a46bfbf464c9244",
-      measurementId: "G-9JY5P9Z6ER"
+        apiKey: "AIzaSyCHaXMRVStvpe7MSzvERSEgHqE3uh4-bXA",
+        authDomain: "next-breath.firebaseapp.com",
+        projectId: "next-breath",
+        storageBucket: "next-breath.firebasestorage.app",
+        messagingSenderId: "127722391309",
+        appId: "1:127722391309:web:bae11e6a46bfbf464c9244",
+        measurementId: "G-9JY5P9Z6ER"
     };
 
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
 
     async function updateCounter() {
-      const q = query(collection(db, "stories"), where("approved", "==", true));
-      const snapshot = await getDocs(q);
-      document.getElementById("counter").innerText = snapshot.size;
+        const q = query(collection(db, "stories"), where("approved", "==", true));
+        const snapshot = await getDocs(q);
+        document.getElementById("counter").innerText = snapshot.size;
     }
 
     updateCounter();
-  </script>
+</script>
+
 </body>
 </html>
