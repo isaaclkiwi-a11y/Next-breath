@@ -1,22 +1,4 @@
-header {
-    text-align: center;
-    padding: 30px 20px;
-    background-color: #00aaff; /* or whatever color you want */
-}
-
-header img.logo {
-    max-width: 250px; /* adjust size */
-    height: auto;
-    display: block;
-    margin: 0 auto 10px auto;
-}
-
-header p {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 1.2em;
-    color: white;
-    margin: 0;
-}
+/* General Styles */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -25,16 +7,35 @@ body {
     color: #333;
 }
 
+/* Header */
 header {
-    background-color: #00aaff;
-    color: white;
-    padding: 40px 20px;
     text-align: center;
+    padding: 30px 20px;
+    background-color: #00aaff; /* main header color */
 }
 
-header h1 { margin: 0; font-size: 3em; }
-header p { font-size: 1.2em; margin-top: 10px; }
+header img.logo {
+    max-width: 250px; /* logo size */
+    height: auto;
+    display: block;
+    margin: 0 auto 10px auto;
+}
 
+header h1 {
+    font-family: 'Fredoka One', sans-serif; /* bold, kid-friendly font */
+    color: white;
+    margin: 10px 0 5px 0;
+    font-size: 2.5em;
+}
+
+header p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.2em;
+    color: white;
+    margin: 0;
+}
+
+/* Navigation */
 nav {
     background-color: #0077cc;
     padding: 10px 20px;
@@ -48,9 +49,18 @@ nav a {
     font-weight: bold;
 }
 
-section { padding: 40px 20px; max-width: 900px; margin: 0 auto; }
-h2 { color: #00aaff; }
+/* Sections */
+section {
+    padding: 40px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
 
+h2 {
+    color: #00aaff;
+}
+
+/* Call to Action */
 .cta {
     background-color: #00aaff;
     color: white;
@@ -60,11 +70,30 @@ h2 { color: #00aaff; }
     font-size: 1.3em;
 }
 
-.cta a { color: white; font-weight: bold; text-decoration: none; }
+.cta a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
 
+/* Footer */
 footer {
     text-align: center;
     padding: 20px;
     background-color: #0077cc;
     color: white;
+}
+
+/* Responsive for phones and tablets */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+    header img.logo {
+        max-width: 180px;
+    }
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
 }
