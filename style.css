@@ -49,22 +49,3 @@ footer {
     background-color: #0077cc;
     color: white;
 }
-header {
-    text-align: center;
-    padding: 30px 20px;
-    background-color: #00aaff; /* or whatever color you want */
-}
-
-header img.logo {
-    max-width: 250px; /* adjust size */
-    height: auto;
-    display: block;
-    margin: 0 auto 10px auto;
-}
-
-header p {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 1.2em;
-    color: white;
-    margin: 0;
-}
